@@ -3,6 +3,8 @@ import Blog from '@/components/home/blog';
 import Develop from '@/components/home/develop';
 import BlogDetail from '@/components/article/home/detail';
 import Honor from '@/components/home/honor';
+import FAQ from '@/components/home/faq';
+import Guide from '@/components/home/guide';
 
 const Router = [
 	{
@@ -15,6 +17,11 @@ const Router = [
 		path: '/home',
 		name: 'Home',
 		component: Home,
+	},
+	{
+		path: '/guide',
+		name: 'Guide',
+		component: Guide,
 	},
 	{
 		path: '/blog',
@@ -36,6 +43,11 @@ const Router = [
 		path: '/honor',
 		name: 'Honor',
 		component: Honor,
+	},
+	{
+		path: '/faq',
+		name: 'FAQ',
+		component: FAQ,
 	},
 ];
 

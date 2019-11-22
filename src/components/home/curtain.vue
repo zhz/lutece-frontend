@@ -24,15 +24,15 @@
 				<div class = "sub-title red--text font-weight-bold" >
 					- Develop better Online Judge
 				</div>
-				<div class = "sub-title blue--text font-weight-bold mt-2" >
+				<!-- <div class = "sub-title blue--text font-weight-bold mt-2" >
 					- Learn computer science
 				</div>
 				<div class = "sub-title green--text font-weight-bold mt-2" >
 					- Make programming contest easy
-				</div>
+				</div> -->
 				<div class = "mt-4" >
 					<v-btn
-						v-for = "( each , index ) in item"
+						v-for = "( each , index ) in item1stline"
 						:key = "index"
 						:color = "each.color"
 						:to = "each.to"
@@ -49,6 +49,26 @@
 						</span>
 					</v-btn>
 				</div>
+				<div class = "mt-4" >
+					<v-btn
+						v-for = "( each , index ) in item2ndline"
+						:key = "index"
+						:color = "each.color"
+						:to = "each.to"
+					>
+						<a
+							v-if = "each.url"
+							:href = "each.url"
+							class = "white--text"
+						>
+							{{ each.info }}
+						</a>
+						<span v-else>
+							{{ each.info }}
+						</span>
+					</v-btn>
+				</div>
+
 			</div>
 		</div>
 	</v-layout>
@@ -63,16 +83,35 @@ const { version } = require('@/utils');
 export default {
 	data: () => ({
 		version,
-		item: [
+		item1stline: [
 			{
-				info: 'Start',
+				info: 'Guide',
 				color: 'success',
+				to: {
+					name: 'Guide',
+				},
 			},
 			{
 				info: 'BLOG',
 				color: 'info',
 				to: {
 					name: 'Blog',
+				},
+			},
+		],
+		item2ndline: [
+			{
+				info: 'FAQ',
+				color: 'warning',
+				to: {
+					name: 'FAQ',
+				},
+			},
+			{
+				info: 'HONOR',
+				color: 'red',
+				to: {
+					name: 'Honor',
 				},
 			},
 			{
@@ -87,13 +126,7 @@ export default {
 				color: 'indigo',
 				url: 'https://github.com/lutece-awesome',
 			},
-			{
-				info: 'HONOR',
-				color: 'red',
-				to: {
-					name: 'Honor',
-				},
-			},
+
 		],
 	}),
 };
@@ -106,7 +139,7 @@ export default {
         margin-top: 10px;
 		margin-left: 10px;
 		margin-right: 10px;
-		height: 600px;
+		height: 500px;
     }
 
 </style>

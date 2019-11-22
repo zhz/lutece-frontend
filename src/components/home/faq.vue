@@ -9,16 +9,16 @@
 		>
 			<v-flex
 				xs12
-				md12
-				lg10
+				md10
+				lg8
 			>
 				<div class = "font-weight-bold display-1 text-xs-center">
 					{{ title }}
 				</div>
 				<async-mixrend-component-with-loading-spinner
-					:content = "require('@/docs/guide.md')"
+					:content = "require('@/docs/faq.md')"
 					class = "mt-3"
-					style = "fontSize: 14px;"
+					style = "fontSize: 16px;"
 				/>
 			</v-flex>
 		</v-layout>
@@ -35,7 +35,7 @@ export default {
 	},
 	data() {
 		return {
-			title: 'Guide For Newbie',
+			title: 'Lutece FAQ',
 		};
 	},
 };
