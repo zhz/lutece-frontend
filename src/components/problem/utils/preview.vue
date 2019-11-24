@@ -60,9 +60,9 @@
 				<td>Output Limit</td>
 				<td>{{ problem.limitation.outputLimit }} MiB</td>
 			</tr>
-			<tr v-if="problem.resources">
-				<td>Source</td>
-				<td>{{ problem.resources }}</td>
+			<tr v-if="problem.sources">
+				<td>Sources</td>
+				<td>{{ problem.sources }}</td>
 			</tr>
 		</table>
 	</v-container>

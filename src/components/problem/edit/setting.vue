@@ -209,11 +209,11 @@
 			</div>
 
 			<div>
-				<div class = "section-title" > Resources </div>
+				<div class = "section-title" > Sources </div>
 				<v-text-field
-					:value = "problem.resources"
-					:error-messages="getErrorByDelegate('resources')"
-					@input = "$emit( 'input-resources' , $event )"
+					:value = "problem.sources"
+					:error-messages="getErrorByDelegate('sources')"
+					@input = "$emit( 'input-sources' , $event )"
 				/>
 			</div>
 

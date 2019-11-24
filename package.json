@@ -13,6 +13,7 @@
     "apollo-cache-inmemory": "^1.5.1",
     "apollo-client": "^2.5.1",
     "apollo-link-context": "^1.0.17",
+    "apollo-tracing": "^0.8.8",
     "apollo-upload-client": "^10.0.0",
     "babel-polyfill": "^6.26.0",
     "chart.js": "^2.8.0",

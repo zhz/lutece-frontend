@@ -42,7 +42,7 @@
 										@input-sample-add = "sampleAdd"
 										@input-constraints = "problem.constraints = $event"
 										@input-note = "problem.note = $event"
-										@input-resources = "problem.resources = $event"
+										@input-sources = "problem.sources = $event"
 									/>
 								</div>
 							</div>
@@ -136,7 +136,7 @@ export default {
 					outputLimit: this.problem.limitation.outputLimit,
 					cpuLimit: this.problem.limitation.cpuLimit,
 					constraints: this.problem.constraints,
-					resources: this.problem.resources,
+					sources: this.problem.sources,
 					standardInput: this.problem.standardInput,
 					standardOutput: this.problem.standardOutput,
 					slug: this.slug,

@@ -362,7 +362,7 @@ export default {
 							standardInput
 							standardOutput
 							constraints
-							resources
+							sources
 							note
 							limitation{
 								timeLimit

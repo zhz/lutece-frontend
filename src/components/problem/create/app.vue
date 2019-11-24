@@ -35,7 +35,7 @@
 							@input-sample-add = "sampleAdd"
 							@input-constraints = "problem.constraints = $event"
 							@input-note = "problem.note = $event"
-							@input-resources = "problem.resources = $event"
+							@input-sources = "problem.sources = $event"
 						/>
 					</div>
 				</div>
@@ -84,7 +84,7 @@ export default {
 					cpuLimit: 1,
 				},
 				constraints: '',
-				resources: '',
+				sources: '',
 				standardInput: '',
 				standardOutput: '',
 				samples: {
@@ -128,7 +128,7 @@ export default {
 
 		triggerSubmit() {
 			const mutation = gql`
-                mutation CreateProblem($title: String!, $content: String!, $note: String!, $timeLimit: Int!, $memoryLimit: Int!, $constraints: String!, $resources: String!, $standardInput: String! , $standardOutput: String! , $samples: String! , $disable: Boolean! , $outputLimit: Int! , $cpuLimit: Int!  ) {
+                mutation CreateProblem($title: String!, $content: String!, $note: String!, $timeLimit: Int!, $memoryLimit: Int!, $constraints: String!, $sources: String!, $standardInput: String! , $standardOutput: String! , $samples: String! , $disable: Boolean! , $outputLimit: Int! , $cpuLimit: Int!  ) {
                     createProblem(
                         title: $title,
                         content: $content,
@@ -138,7 +138,7 @@ export default {
                         outputLimit: $outputLimit,
                         cpuLimit: $cpuLimit,
                         constraints: $constraints,
-                        resources: $resources,
+                        sources: $sources,
                         standardInput: $standardInput,
                         standardOutput: $standardOutput,
                         samples: $samples,
@@ -159,7 +159,7 @@ export default {
 					outputLimit: this.problem.limitation.outputLimit,
 					cpuLimit: this.problem.limitation.cpuLimit,
 					constraints: this.problem.constraints,
-					resources: this.problem.resources,
+					sources: this.problem.sources,
 					standardInput: this.problem.standardInput,
 					standardOutput: this.problem.standardOutput,
 					samples: JSON.stringify(this.problem.samples.sampleList),
