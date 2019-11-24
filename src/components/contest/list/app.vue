@@ -10,8 +10,8 @@
 		>
 			<v-flex
 				xs12
-				md10
-				lg9>
+				md12
+				lg10>
 				<search-bar
 					v-model = "filter"
 					class = "mb-4 fluid"

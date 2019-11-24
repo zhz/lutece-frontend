@@ -9,8 +9,8 @@
 		>
 			<v-flex
 				xs12
-				md10
-				lg8
+				md12
+				lg10
 			>
 				<div class = "font-weight-bold display-1 text-xs-center">
 					{{ title }}

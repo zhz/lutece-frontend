@@ -10,8 +10,8 @@
 		>
 			<v-flex
 				xs12
-				md10
-				lg9>
+				md12
+				lg10>
 				<ApolloQuery
 					:query = "require('@/graphql/problem/list.gql')"
 					:variables = "{ page , filter }"

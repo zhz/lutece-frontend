@@ -14,8 +14,8 @@
 			>
 				<v-flex
 					xs12
-					md10
-					lg8
+					md12
+					lg10
 					text-xs-center
 				>
 					<ApolloQuery
@@ -42,7 +42,8 @@
 							>
 								<v-flex
 									xs12
-									sm9
+									md12
+									lg12
 								>
 									<home-artile-tile
 										v-for = " ( each , index ) in data.homeArticleList.homeArticleList "

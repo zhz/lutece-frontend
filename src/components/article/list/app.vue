@@ -5,9 +5,9 @@
 			row
 			justify-center>
 			<v-flex
-				xs10
-				md8
-				lg6>
+				xs12
+				md12
+				lg10>
 				<ApolloQuery
 					:query = "require('@/graphql/article/list.gql')"
 					:variables = "{ page }"

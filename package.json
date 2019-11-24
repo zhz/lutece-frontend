@@ -17,6 +17,7 @@
     "babel-polyfill": "^6.26.0",
     "chart.js": "^2.8.0",
     "codemirror": "^5.46.0",
+    "cycle": "^1.0.3",
     "graphql": "^14.5.8",
     "katex": "^0.10.1",
     "lodash.debounce": "^4.0.8",

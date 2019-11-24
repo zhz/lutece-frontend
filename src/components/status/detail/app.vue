@@ -8,7 +8,8 @@
 			justify-center>
 			<v-flex
 				xs12
-				md8
+				md12
+				lg10
 			>
 				<div>
 					<Summary

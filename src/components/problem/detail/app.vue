@@ -11,8 +11,9 @@
 			>
 				<v-flex
 					xs12
-					md10
-					xl8
+					md12
+					lg10
+					xl10
 				>
 					<v-card>
 						<v-tabs

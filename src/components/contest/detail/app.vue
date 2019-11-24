@@ -11,7 +11,8 @@
 		>
 			<v-flex
 				xs12
-				md10
+				md12
+				lg10
 			>
 				<loading-spinner
 					v-if = "isLoading"
