@@ -5,7 +5,7 @@
 	>
 		<div>
 			<h2
-				class = "headline pt-3 pl-3 pb-2"
+				class = "title pt-3 pl-3 pb-2"
 				style = "text-align: start"
 			>
 				{{ title }}
@@ -17,7 +17,7 @@
 				v-line-clamp:20 = "2"
 				class = "content"
 			>
-				{{ preview }}
+				{{ excerpt }}
 			</div>
 		</v-card-text>
 
@@ -72,7 +72,7 @@ export default {
 			type: String,
 			default: '',
 		},
-		preview: {
+		excerpt: {
 			type: String,
 			default: '',
 		},

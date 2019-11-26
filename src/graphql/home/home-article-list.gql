@@ -4,7 +4,7 @@ query HomeArticleListGQL($page: Int!, $filter: String) {
 		homeArticleList {
 			title
             slug
-            preview
+            excerpt
 			author {
 				username
 				attachInfo{

@@ -1,4 +1,4 @@
-mutation UpdateProblemGQL($title: String!, $content: String!, $note: String!, $timeLimit: Int!, $memoryLimit: Int!, $constraints: String!, $sources: String!, $standardInput: String! , $standardOutput: String! , $slug: String! , $samples: String! , $disable: Boolean! , $outputLimit: Int! , $cpuLimit: Int!  ) {
+mutation UpdateProblemGQL($title: String!, $content: String!, $note: String!, $timeLimit: Int!, $memoryLimit: Int!, $constraints: String!, $sources: String!, $standardInput: String! , $standardOutput: String! , $slug: String! , $samples: String! , $disabled: Boolean! , $private: Boolean! , $outputLimit: Int! , $cpuLimit: Int!  ) {
 	updateProblem(
         title: $title,
         content: $content,
@@ -13,7 +13,8 @@ mutation UpdateProblemGQL($title: String!, $content: String!, $note: String!, $t
         standardOutput: $standardOutput,
         slug: $slug,
         samples: $samples,
-        disable: $disable
+        disabled: $disabled,
+        private: $private
     ) {
         slug
 	}

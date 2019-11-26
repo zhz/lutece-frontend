@@ -14,7 +14,8 @@ query ProblemEditDetailGQL($slug: String!) {
 			outputLimit
 			cpuLimit
 		}
-        disable
+        disabled
+        private
 		samples {
 			sampleList{
 				inputContent

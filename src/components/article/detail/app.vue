@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class = "display-1 text-xs-center mt-2">
+		<div class = "title text-xs-center mt-2">
 			{{ title }}
 		</div>
 		<div class = "text-xs-center mt-2 section">
@@ -37,7 +37,7 @@
 		<v-divider class="my-3"/>
 		<async-mixrend-component
 			:content = "content"
-			class = "subheading"
+			class = "body-1 markdown-body"
 		/>
 	</div>
 </template>

@@ -11,8 +11,10 @@
 		>
 			<v-flex
 				xs12
+				sm12
 				md12
-				lg10
+				lg12
+				xl10
 			>
 				<loading-spinner
 					v-if = "isLoading"
@@ -27,7 +29,7 @@
 					:title = "title"
 					:start-time = "startTime"
 					:end-time = "endTime"
-					:disable = "disable"
+					:disabled = "disabled"
 					:is-public = "isPublic"
 					:problem-list = "problemList"
 					:note = "note"
@@ -35,7 +37,7 @@
 					:max-team-member-number = "maxTeamMemberNumber"
 					form-title = "Update Contest"
 					@input-title = "title = $event"
-					@input-disable = "disable = $event"
+					@input-disabled = "disabled = $event"
 					@input-startTime = "startTime = $event"
 					@input-endTime = "endTime = $event"
 					@input-visibility = "isPublic = $event"
@@ -70,7 +72,7 @@ export default {
 	data() {
 		return {
 			title: '',
-			disable: false,
+			disabled: false,
 			startTime: new Date(),
 			endTime: new Date(),
 			maxTeamMemberNumber: 1,
@@ -96,7 +98,7 @@ export default {
 						title
 						settings {
 							note
-							disable
+							disabled
 							startTime
 							endTime
 							maxTeamMemberNumber
@@ -120,7 +122,7 @@ export default {
 				.then((data) => {
 					this.title = data.title;
 					this.note = data.settings.note;
-					this.disable = data.settings.disable;
+					this.disabled = data.settings.disabled;
 					this.startTime = new Date(data.settings.startTime);
 					this.endTime = new Date(data.settings.endTime);
 					this.maxTeamMemberNumber = data.settings.maxTeamMemberNumber;
@@ -148,12 +150,12 @@ export default {
 		},
 		updateContest() {
 			const mutation = gql`
-				mutation UpdateContest($pk: ID!, $title: String!, $note: String!, $disable: Boolean!, $startTime: DateTime!, $endTime: DateTime!, $maxTeamMemberNumber: Int!, $isPublic: Boolean!, $problems: String!) {
+				mutation UpdateContest($pk: ID!, $title: String!, $note: String!, $disabled: Boolean!, $startTime: DateTime!, $endTime: DateTime!, $maxTeamMemberNumber: Int!, $isPublic: Boolean!, $problems: String!) {
 					updateContest(
 						pk: $pk,
 						title: $title,
 						note: $note,
-						disable: $disable,
+						disabled: $disabled,
 						startTime: $startTime,
 						endTime: $endTime,
 						maxTeamMemberNumber: $maxTeamMemberNumber,
@@ -171,7 +173,7 @@ export default {
 					pk: this.pk,
 					title: this.title,
 					note: this.note,
-					disable: this.disable,
+					disabled: this.disabled,
 					startTime: this.startTime,
 					endTime: this.endTime,
 					maxTeamMemberNumber: this.maxTeamMemberNumber,

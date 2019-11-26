@@ -10,8 +10,11 @@
 		>
 			<v-flex
 				xs12
+				sm12
 				md12
-				lg10>
+				lg12
+				xl10
+			>
 				<div class = "mt-2">
 					<ApolloQuery
 						:query = "require('@/graphql/submission/list.gql')"

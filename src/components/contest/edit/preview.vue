@@ -25,10 +25,10 @@
 				</v-flex>
 				<v-flex xs12>
 					<v-checkbox
-						:input-value = "disable"
+						:input-value = "disabled"
 						:disabled = "withRender"
-						:label = "disable ? 'disable' : 'non-disable'"
-						@change = "$emit( 'input-disable' , $event )"
+						:label = "disabled ? 'Disabled' : 'Non-disabled'"
+						@change = "$emit( 'input-disabled' , $event )"
 					/>
 				</v-flex>
 				<v-flex xs12>
@@ -120,7 +120,7 @@
 					<async-mixrend-component
 						v-if = "withRender"
 						:content = "note"
-						class = "pt-2"
+						class = "pt-2 markdown-body"
 					/>
 					<v-textarea
 						v-else
@@ -180,7 +180,7 @@ export default {
 			type: String,
 			required: true,
 		},
-		disable: {
+		disabled: {
 			type: Boolean,
 			default: false,
 		},
@@ -237,7 +237,7 @@ export default {
 				title: this.title,
 				content: this.content,
 				preview: this.preview,
-				disable: this.disable,
+				disabled: this.disabled,
 			};
 			const submitPromise = func(data);
 			submitPromise

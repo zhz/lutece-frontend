@@ -8,8 +8,10 @@
 			justify-center>
 			<v-flex
 				xs12
+				sm12
 				md12
-				lg10
+				lg12
+				xl10
 			>
 				<div>
 					<Summary
@@ -123,6 +125,7 @@ export default {
 
 	computed: {
 		hasCode() {
+			// return false; //temperay disabled the code view
 			if (!this.code) return false;
 			return this.code.length > 0;
 		},

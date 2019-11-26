@@ -14,8 +14,10 @@
 			>
 				<v-flex
 					xs12
+					sm12
 					md12
-					lg10
+					lg12
+					xl10
 					text-xs-center
 				>
 					<ApolloQuery
@@ -51,7 +53,7 @@
 										:title = "each.title"
 										:slug = "each.slug"
 										:username = "each.author.username"
-										:preview = "each.preview"
+										:excerpt = "each.excerpt"
 										:gravatar = "each.author.attachInfo.gravatar"
 										:last-update-time = "each.lastUpdateTime"
 										:count = "each.record.count"

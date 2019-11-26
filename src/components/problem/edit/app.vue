@@ -32,7 +32,8 @@
 										@input-limitation-memory-limit = "problem.limitation.memoryLimit = $event"
 										@input-limitation-output-limit = "problem.limitation.outputLimit = $event"
 										@input-limitation-cpu-limit = "problem.limitation.cpuLimit = $event"
-										@input-disable = "problem.disable = $event ? true : false"
+										@input-disabled = "problem.disabled = $event ? true : false"
+										@input-private = "problem.private = $event ? true : false"
 										@input-content = "problem.content = $event"
 										@input-standard-input = "problem.standardInput = $event"
 										@input-standard-output = "problem.standardOutput = $event"
@@ -141,7 +142,8 @@ export default {
 					standardOutput: this.problem.standardOutput,
 					slug: this.slug,
 					samples: JSON.stringify(this.problem.samples.sampleList),
-					disable: this.problem.disable,
+					disabled: this.problem.disabled,
+					private: this.problem.private,
 				},
 			}).then((response) => {
 				clearApolloCache().then(() => {

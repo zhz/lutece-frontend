@@ -29,34 +29,34 @@
 						@input = "$emit( 'input-title' , $event )"/>
 				</v-flex>
 				<v-flex
-					v-if = "withDisable"
+					v-if = "withDisabled"
 					xs12
 				>
 					<v-checkbox
-						:input-value = "disable"
+						:input-value = "disabled"
 						:disabled = "withRender"
-						:label = "disable ? 'disable' : 'non-disable'"
-						@change = "$emit( 'input-disable' , $event )"
+						:label = "disabled ? 'Disabled' : 'Non-Disabled'"
+						@change = "$emit( 'input-disabled' , $event )"
 					/>
 				</v-flex>
 				<v-flex
 					v-if = "withPreview"
 					xs12
 				>
-					<div class = "section-title" > Preview </div>
+					<div class = "section-title" > Excerpt </div>
 					<div
 						v-line-clamp:20 = "2"
 						v-if = "withRender"
 						class = "mt-4"
 					>
-						{{ preview }}
+						{{ excerpt }}
 					</div>
 					<v-textarea
 						v-else
-						:value = "preview"
+						:value = "excerpt"
 						auto-grow
 						rows = "2"
-						@input = "$emit( 'input-preview' , $event )"
+						@input = "$emit( 'input-excerpt' , $event )"
 					/>
 				</v-flex>
 				<v-flex xs12>
@@ -64,7 +64,7 @@
 					<async-mixrend-component
 						v-if = "withRender"
 						:content = "content"
-						class = "mt-4"
+						class = "mt-4 markdown-body"
 					/>
 					<v-textarea
 						v-else
@@ -129,15 +129,15 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		preview: {
+		excerpt: {
 			type: String,
 			default: '',
 		},
-		withDisable: {
+		withDisabled: {
 			type: Boolean,
 			default: false,
 		},
-		disable: {
+		disabled: {
 			type: Boolean,
 			default: false,
 		},
@@ -168,8 +168,8 @@ export default {
 				slug: this.slug,
 				title: this.title,
 				content: this.content,
-				preview: this.preview,
-				disable: this.disable,
+				excerpt: this.excerpt,
+				disabled: this.disabled,
 			};
 			const submitPromise = func(data);
 			submitPromise

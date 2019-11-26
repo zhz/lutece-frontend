@@ -25,7 +25,8 @@
 							@input-limitation-memory-limit = "problem.limitation.memoryLimit = $event"
 							@input-limitation-output-limit = "problem.limitation.outputLimit = $event"
 							@input-limitation-cpu-limit = "problem.limitation.cpuLimit = $event"
-							@input-disable = "problem.disable = $event ? true : false"
+							@input-disabled = "problem.disabled = $event ? true : false"
+							@input-private = "problem.private = $event ? true : false"
 							@input-content = "problem.content = $event"
 							@input-standard-input = "problem.standardInput = $event"
 							@input-standard-output = "problem.standardOutput = $event"
@@ -90,7 +91,8 @@ export default {
 				samples: {
 					sampleList: [],
 				},
-				disable: false,
+				disabled: false,
+				private: false,
 			},
 		};
 	},
@@ -128,7 +130,7 @@ export default {
 
 		triggerSubmit() {
 			const mutation = gql`
-                mutation CreateProblem($title: String!, $content: String!, $note: String!, $timeLimit: Int!, $memoryLimit: Int!, $constraints: String!, $sources: String!, $standardInput: String! , $standardOutput: String! , $samples: String! , $disable: Boolean! , $outputLimit: Int! , $cpuLimit: Int!  ) {
+                mutation CreateProblem($title: String!, $content: String!, $note: String!, $timeLimit: Int!, $memoryLimit: Int!, $constraints: String!, $sources: String!, $standardInput: String! , $standardOutput: String! , $samples: String! , $disabled: Boolean! , $private: Boolean! ,$outputLimit: Int! , $cpuLimit: Int!  ) {
                     createProblem(
                         title: $title,
                         content: $content,
@@ -142,7 +144,8 @@ export default {
                         standardInput: $standardInput,
                         standardOutput: $standardOutput,
                         samples: $samples,
-                        disable: $disable
+                        disabled: $disabled,
+                        private: $private
                     ) {
                         slug
                     }
@@ -163,7 +166,8 @@ export default {
 					standardInput: this.problem.standardInput,
 					standardOutput: this.problem.standardOutput,
 					samples: JSON.stringify(this.problem.samples.sampleList),
-					disable: this.problem.disable,
+					disabled: this.problem.disabled,
+					private: this.problem.private,
 				},
 			}).then((response) => {
 				clearApolloCache().then(

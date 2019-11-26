@@ -9,8 +9,10 @@
 			justify-center>
 			<v-flex
 				xs12
+				sm12
 				md12
-				lg10
+				lg12
+				xl10
 			>
 				<ApolloQuery
 					:query = "require('@/graphql/user/list.gql')"

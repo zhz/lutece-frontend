@@ -18,23 +18,25 @@
 				>
 					<v-flex
 						xs12
+						sm12
 						md12
-						lg10
+						lg12
+						xl10
 					>
 						<article-setting
 							:title = "title"
 							:slug = "slug"
 							:content = "content"
 							:with-preview = "true"
-							:preview = "preview"
-							:with-disable = "true"
-							:disable = "disable"
+							:excerpt = "excerpt"
+							:with-disabled = "true"
+							:disabled = "disabled"
 							:submit = "submit"
 							form-title = "Edit Blog"
 							@input-title = "title = $event"
 							@input-content = "content = $event"
-							@input-preview = "preview = $event"
-							@input-disable = "disable = $event ? true : false"
+							@input-excerpt = "excerpt = $event"
+							@input-disabled = "disabled = $event ? true : false"
 						/>
 					</v-flex>
 				</v-layout>
@@ -67,8 +69,8 @@ export default {
 			pk: '',
 			title: '',
 			content: '',
-			preview: '',
-			disable: false,
+			excerpt: '',
+			disabled: false,
 			isLoading: false,
 			isError: false,
 			errorMsg: 'Network Error',
@@ -83,8 +85,8 @@ export default {
 					pk
                     title
                     content
-                    preview
-                    disable
+                    excerpt
+                    disabled
 				}
 			}
 		`;
@@ -109,8 +111,8 @@ export default {
 	methods: {
 		submit(data) {
 			const mutation = gql`
-                mutation UpdateHomeArticle( $slug: String!, $title: String!, $content: String!, $preview: String!, $disable: Boolean!){
-                    updateHomeArticle( slug: $slug, title: $title, content: $content, preview: $preview, disable: $disable ){
+                mutation UpdateHomeArticle( $slug: String!, $title: String!, $content: String!, $excerpt: String!, $disabled: Boolean!){
+                    updateHomeArticle( slug: $slug, title: $title, content: $content, excerpt: $excerpt, disabled: $disabled ){
                         slug
                     }
                 } 
@@ -121,8 +123,8 @@ export default {
 					slug: data.slug,
 					title: data.title,
 					content: data.content,
-					preview: data.preview,
-					disable: data.disable,
+					excerpt: data.excerpt,
+					disabled: data.disabled,
 				},
 			}).then((response) => {
 				clearApolloCache().finally(

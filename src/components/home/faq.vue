@@ -9,16 +9,18 @@
 		>
 			<v-flex
 				xs12
+				sm12
 				md12
-				lg10
+				lg12
+				xl10
 			>
 				<div class = "font-weight-bold display-1 text-xs-center">
 					{{ title }}
 				</div>
 				<async-mixrend-component-with-loading-spinner
 					:content = "require('@/docs/faq.md')"
-					class = "mt-3"
-					style = "fontSize: 16px;"
+					class = "mt-3 markdown-body"
+					style = "fontSize: 14px; padding-top:20px;"
 				/>
 			</v-flex>
 		</v-layout>

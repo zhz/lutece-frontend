@@ -92,19 +92,19 @@ export default {
 				},
 			},
 			{
-				info: 'BLOG',
-				color: 'info',
+				info: 'FAQ',
+				color: 'warning',
 				to: {
-					name: 'Blog',
+					name: 'FAQ',
 				},
 			},
 		],
 		item2ndline: [
 			{
-				info: 'FAQ',
-				color: 'warning',
+				info: 'BLOG',
+				color: 'info',
 				to: {
-					name: 'FAQ',
+					name: 'Blog',
 				},
 			},
 			{

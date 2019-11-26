@@ -11,20 +11,22 @@
 		>
 			<v-flex
 				xs12
+				sm12
 				md12
-				lg10
+				lg12
+				xl10
 			>
 				<article-setting
 					:title = "title"
 					:content = "content"
 					:with-preview = "true"
-					:preview = "preview"
+					:excerpt = "excerpt"
 					:submit = "submit"
 					form-title = "Create Blog"
 					@input-title = "title = $event"
 					@input-content = "content = $event"
-					@input-preview = "preview = $event"
-					@input-disable = "disable = $event ? true : false"
+					@input-excerpt = "excerpt = $event"
+					@input-disabled = "disabled = $event ? true : false"
 				/>
 			</v-flex>
 		</v-layout>
@@ -46,15 +48,15 @@ export default {
 		return {
 			title: '',
 			content: '',
-			preview: '',
+			excerpt: '',
 		};
 	},
 
 	methods: {
 		submit(data) {
 			const mutation = gql`
-                mutation CreateHomeArticle( $title: String! , $preview: String! ,$content: String! ){
-                    createHomeArticle( title: $title, preview: $preview, content: $content ){
+                mutation CreateHomeArticle( $title: String! , $excerpt: String! ,$content: String! ){
+                    createHomeArticle( title: $title, excerpt: $excerpt, content: $content ){
                         slug
                     }
                 }
@@ -64,7 +66,7 @@ export default {
 				variables: {
 					title: data.title,
 					content: data.content,
-					preview: data.preview,
+					excerpt: data.excerpt,
 				},
 			}).then((response) => {
 				clearApolloCache().finally(

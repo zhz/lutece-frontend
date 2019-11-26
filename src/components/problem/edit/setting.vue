@@ -72,9 +72,16 @@
 				</div>
 				<div>
 					<v-switch
-						:input-value = "problem.disable"
-						:label = " problem.disable ? 'disable' : 'non disable' "
-						@change = "$emit( 'input-disable' , $event )"
+						:input-value = "problem.disabled"
+						:label = " problem.disabled ? 'Disabled' : 'Non Disabled' "
+						@change = "$emit( 'input-disabled' , $event )"
+					/>
+				</div>
+				<div>
+					<v-switch
+						:input-value = "problem.private"
+						:label = " problem.private ? 'Private' : 'Public' "
+						@change = "$emit( 'input-private' , $event )"
 					/>
 				</div>
 				<div class = "limitation-section">

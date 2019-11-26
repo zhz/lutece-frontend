@@ -8,8 +8,10 @@
 		>
 			<v-flex
 				xs12
+				sm12
 				md12
-				lg10
+				lg12
+				xl10
 			>
 				<loading-spinner v-if = "isLoading"/>
 				<error-spinner v-else-if = "isError"/>

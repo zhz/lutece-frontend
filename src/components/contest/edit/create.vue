@@ -11,14 +11,16 @@
 		>
 			<v-flex
 				xs12
+				sm12
 				md12
-				lg10
+				lg12
+				xl10
 			>
 				<preview
 					:title = "title"
 					:start-time = "startTime"
 					:end-time = "endTime"
-					:disable = "disable"
+					:disabled = "disabled"
 					:is-public = "isPublic"
 					:problem-list = "problemList"
 					:note = "note"
@@ -26,7 +28,7 @@
 					:max-team-member-number = "maxTeamMemberNumber"
 					form-title = "Create Contest"
 					@input-title = "title = $event"
-					@input-disable = "disable = $event"
+					@input-disabled = "disabled = $event"
 					@input-startTime = "startTime = $event"
 					@input-endTime = "endTime = $event"
 					@input-visibility = "isPublic = $event"
@@ -54,7 +56,7 @@ export default {
 	data() {
 		return {
 			title: '',
-			disable: false,
+			disabled: false,
 			startTime: new Date(),
 			endTime: new Date(),
 			maxTeamMemberNumber: 1,
@@ -79,11 +81,11 @@ export default {
 		},
 		createContest() {
 			const mutation = gql`
-				mutation CreateContest($title: String!, $note: String!, $disable: Boolean!, $startTime: DateTime!, $endTime: DateTime!, $maxTeamMemberNumber: Int!, $isPublic: Boolean!, $problems: String!) {
+				mutation CreateContest($title: String!, $note: String!, $disabled: Boolean!, $startTime: DateTime!, $endTime: DateTime!, $maxTeamMemberNumber: Int!, $isPublic: Boolean!, $problems: String!) {
 					createContest(
 						title: $title,
 						note: $note,
-						disable: $disable,
+						disabled: $disabled,
 						startTime: $startTime,
 						endTime: $endTime,
 						maxTeamMemberNumber: $maxTeamMemberNumber,
@@ -100,7 +102,7 @@ export default {
 				variables: {
 					title: this.title,
 					note: this.note,
-					disable: this.disable,
+					disabled: this.disabled,
 					startTime: this.startTime,
 					endTime: this.endTime,
 					maxTeamMemberNumber: this.maxTeamMemberNumber,
