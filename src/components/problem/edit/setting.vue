@@ -84,32 +84,68 @@
 						@change = "$emit( 'input-private' , $event )"
 					/>
 				</div>
-				<div class = "limitation-section">
-					<v-btn
-						:loading = "isUploadingData"
-						:disabled = "isUploadingData || !problem.pk"
-						:color = " isUploadingError ? 'error' : 'blue-grey' "
-						class = "white--text"
-						style = "margin-left: -2px"
-						@click = "uploadData"
-					>
-						<input
-							ref = "fileInput"
-							type = "file"
-							style = "display:none"
-							@change = "onFilePicked"
-						>
-						Upload Data
-						<v-icon
-							right
-							dark
-						>
-							mdi-cloud
-						</v-icon>
-					</v-btn>
-				</div>
 			</div>
-
+			<div class = "xs12 sm12 md12 lg12 xl10" >
+				<v-layout
+					row
+					wrap
+				>
+					<v-flex
+						xs12
+						md6
+					>
+						<v-btn
+							:loading = "isUploadingMedia"
+							:disabled = "isUploadingMedia || !problem.pk"
+							:color = " isUploadingMediaError ? 'error' : 'blue-grey' "
+							class = "white--text"
+							style = "margin-left: -2px"
+							@click = "uploadMedia"
+						>
+							<input
+								ref = "fileInputMedia"
+								type = "file"
+								style = "display:none"
+								@change = "onMediaFilePicked"
+							>
+							Upload Content Media
+							<v-icon
+								right
+								dark
+							>
+								mdi-image
+							</v-icon>
+						</v-btn>
+					</v-flex>
+					<v-flex
+						xs12
+						md6
+					>
+						<v-btn
+							:loading = "isUploadingData"
+							:disabled = "isUploadingData || !problem.pk"
+							:color = " isUploadingDataError ? 'error' : 'blue-grey' "
+							class = "white--text"
+							style = "margin-left: -2px"
+							@click = "uploadData"
+						>
+							<input
+								ref = "fileInputData"
+								type = "file"
+								style = "display:none"
+								@change = "onDataFilePicked"
+							>
+							Upload Judge Dataset
+							<v-icon
+								right
+								dark
+							>
+								mdi-check-box-multiple-outline
+							</v-icon>
+						</v-btn>
+					</v-flex>
+				</v-layout>
+			</div>
 			<div>
 				<div class = "section-title" > Content </div>
 				<v-textarea
@@ -260,7 +296,10 @@ export default {
 		isLoading: false,
 		error: false,
 		isUploadingData: false,
-		isUploadingError: false,
+		isUploadingDataError: false,
+		isUploadingMedia: false,
+		isUploadingMediaError: false,
+		mediaURL: '',
 	}),
 
 	methods: {
@@ -282,10 +321,10 @@ export default {
 		},
 
 		uploadData() {
-			this.$refs.fileInput.click();
+			this.$refs.fileInputData.click();
 		},
 
-		onFilePicked(e) {
+		onDataFilePicked(e) {
 			const file = e.target.files[0];
 			const fileType = file.type;
 			if (fileType !== 'application/zip' && fileType !== 'application/x-zip-compressed' && fileType !== 'application/x-compressed') {
@@ -298,7 +337,7 @@ export default {
 				this.$store.commit('snackbar/setSnack', 'Max data size is 200 Mib');
 				return;
 			}
-			this.isUploadingError = false;
+			this.isUploadingDataError = false;
 			this.isUploadingData = true;
 			const mutation = gql`
 				mutation UpdateProblemData($pk: ID!, $file: Upload!){
@@ -315,17 +354,63 @@ export default {
 				},
 			})
 				.then(() => {
-					this.$store.commit('snackbar/setSnack', 'Successfully upadte data');
+					this.$store.commit('snackbar/setSnack', 'Successfully update data');
 				})
 				.catch((error) => {
 					this.$store.commit('snackbar/setSnack', error);
-					this.isUploadingError = true;
+					this.isUploadingDataError = true;
 				})
 				.finally(() => {
 					this.isUploadingData = false;
 				});
 		},
 
+		uploadMedia() {
+			this.$refs.fileInputMedia.click();
+		},
+
+		onMediaFilePicked(e) {
+			const file = e.target.files[0];
+			const fileType = file.type;
+			if (fileType !== 'application/zip' && fileType !== 'application/x-zip-compressed' && fileType !== 'application/x-compressed' && fileType !== 'image/gif' && fileType !== 'image/jpeg' && fileType !== 'image/png') {
+				this.$store.commit('snackbar/setSnack', 'Media must be a single zip file or image file');
+				return;
+			}
+			const { size } = file;
+			const limitation = 200 * 1024 * 1024;
+			if (size > limitation) {
+				this.$store.commit('snackbar/setSnack', 'Max media size is 200 Mib');
+				return;
+			}
+			this.isUploadingMediaError = false;
+			this.isUploadingMedia = true;
+			const mutation = gql`
+				mutation UpdateProblemMedia($pk: ID!, $file: Upload!){
+					updateProblemMedia(pk: $pk, file: $file){
+						state
+					}
+				}
+			`;
+			this.$apollo.mutate({
+				mutation,
+				variables: {
+					pk: this.problem.pk,
+					file,
+				},
+			})
+				.then(() => {
+					this.mediaURL = `/media/problem/${this.problem.pk}/${file.name}`;
+					this.problem.content = this.problem.content + this.mediaURL;
+					this.$store.commit('snackbar/setSnack', 'Successfully update media');
+				})
+				.catch((error) => {
+					this.$store.commit('snackbar/setSnack', error);
+					this.isUploadingMediaError = true;
+				})
+				.finally(() => {
+					this.isUploadingMedia = false;
+				});
+		},
 	},
 };
 </script>
