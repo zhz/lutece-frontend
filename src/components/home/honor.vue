@@ -20,8 +20,8 @@
 				<async-mixrend-component-with-loading-spinner
 					:content = "require('@/docs/honor.md')"
 					danger
-					class = "mt-3 honor-content markdown-body"
-					style = "fontSize: 14px; padding-top:20px;"
+					class = "mt-3 honor-content"
+					style = "padding-top:20px;"
 				/>
 			</v-flex>
 		</v-layout>

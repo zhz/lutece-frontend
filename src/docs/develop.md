@@ -1,5 +1,5 @@
 ## Introduction
-[Lutece](https://github.com/lutece-awesome) is a fast iterative developing Online Judge platform, the Dev team still bring many amazing features on it, as open source project, you can also join the building of this 👏awesome project, this simple doc would guide you:
+[Lutece](https://github.com/lutece-awesome) is a fast iterative developing Online Judge platform, the Dev team still bring many amazing features on it, as open source project, you can also join the building of this awesome project, this simple doc would guide you:
 - Architecture introduction
 - How to run dev server in localhost
 - Dev environment

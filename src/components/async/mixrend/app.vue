@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="renderContent"
+		class="renderContent markdown-body"
 		v-html="renderContent"
 	/>
 </template>
@@ -36,9 +36,9 @@ export default {
 
 <style scoped>
 .renderContent {
-  font-size: 14px;
+  /* font-size: 14px; */
   line-height: 22px;
-  font-family: "Helvetica Neue", "Helvetica", "Arial", "PingFang SC",
-    "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-family: "Roboto", "sans-serif", "Helvetica Neue", "Helvetica", "Arial", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei";
 }
 </style>

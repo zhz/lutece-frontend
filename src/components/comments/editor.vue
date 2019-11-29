@@ -4,7 +4,7 @@
 			<async-mixrend-component-with-loading-spinner
 				v-if = "withRender"
 				:content = "content"
-				class = "pt-2 markdown-body"
+				class = "pt-2"
 			/>
 			<v-textarea
 				v-else

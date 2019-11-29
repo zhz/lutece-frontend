@@ -120,7 +120,7 @@
 					<async-mixrend-component
 						v-if = "withRender"
 						:content = "note"
-						class = "pt-2 markdown-body"
+						class = "pt-2"
 					/>
 					<v-textarea
 						v-else

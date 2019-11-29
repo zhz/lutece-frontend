@@ -19,8 +19,8 @@
 				</div>
 				<async-mixrend-component-with-loading-spinner
 					:content = "require('@/docs/develop.md')"
-					class = "mt-3 markdown-body"
-					style = "fontSize: 14px; padding-top:20px;"
+					class = "mt-3"
+					style = "padding-top:20px;"
 				/>
 			</v-flex>
 		</v-layout>

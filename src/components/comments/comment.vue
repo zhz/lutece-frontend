@@ -33,7 +33,7 @@
 					</div>
 					<async-mixrend-component
 						:content = "content"
-						class = "mt-3 commentContent markdown-body"
+						class = "mt-3 commentContent"
 					/>
 					<v-layout
 						class = "mt-3"

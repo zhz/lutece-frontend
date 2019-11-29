@@ -14,13 +14,13 @@
 				lg12
 				xl10
 			>
-				<div class = "display-1 text-xs-center">
+				<div class = "font-weight-bold display-1 text-xs-center">
 					{{ title }}
 				</div>
 				<async-mixrend-component-with-loading-spinner
 					:content = "require('@/docs/guide.md')"
-					class = "mt-3 markdown-body"
-					style = "fontSize: 14px; padding-top:20px;"
+					class = "mt-3"
+					style = "padding-top:20px;"
 				/>
 			</v-flex>
 		</v-layout>
@@ -37,7 +37,7 @@ export default {
 	},
 	data() {
 		return {
-			title: 'Guide For Newbie',
+			title: 'Guide for newbie',
 		};
 	},
 };

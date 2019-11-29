@@ -37,7 +37,7 @@
 		<v-divider class="my-3"/>
 		<async-mixrend-component
 			:content = "content"
-			class = "body-1 markdown-body"
+			class = ""
 		/>
 	</div>
 </template>

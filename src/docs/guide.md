@@ -1,83 +1,70 @@
+## Introduction
+There is no more diffrence between Lutece and other online judge systems , use Lutece is quiet easy ,this simple page will guide you:
+- How to register account
+- How to update your profile
+- How to browse the problem
+- How to submit your code
+- How to join the contest
+- How to submit your classwork & homework
 
-欢迎使用 Lutece 在线测评系统，在进行下一步操作之前，请仔细阅读本指南！
-------
+## How to register account
+Click [SIGNIN](/login) at the right top corner , then click [Do not have an account ?](/signup)  of the login panel , fill in the fields with your information and submit.
 
-## 如何注册账号和登录
-点击网站右上角的 `Sign in`，在登录框里点击 `Do not have account?` 进入注册页面，填写所需的注册信息即可注册账号。
+**NOTICE**: If your want to join the contest or submit your class work or homework , you should use the real information such as Email/School etc . you can set your StudentID later in the Settings page after login to Lutece.
 
-**请注意：如果你想要参加比赛或者提交作业，那么请务必完整填写真实的个人信息。如果是之前注册的账号也请进行相应的修改。**
+## How to update your profile
+[Login to](/login) Lutece , click the avatar at the top right corner , select Profile from the dropdown menu , the web page will show your profile details , then click the red Edit button at the right bottom.
 
-注册完账号以后，继续点击 `Sign in`，在下拉菜单中填写账号密码即可登录。
+Lutece use the [Gavatar(Globally Recognized Avatar)](http://gravatar.com) system , register at [http://gravatar.com](http://gravatar.com) and bind image to your email address , avatar at Lutece will update automaticly.
 
-## 如何更新个人信息
-如果想要更新个人信息，可以点击右上角的自己的头像进入 `Profile` 页面，再点击右下角的红色的按钮以进入个人信息修改页面。
+## How to browse the problems
+Click Problem at the left menu , public problems list will be shown on the page. click the problem title to view details , Accepted/Submit means the correct/total amount ,Ratio means the correct proportion.
 
-Lutece 使用你注册时填写的邮箱的 gravatar 头像，所以你需要在 [http://gravatar.com](http://gravatar.com) 注册一个帐号并设置你相关邮件地址的头像即可。
+About the Description:
 
-## 如何浏览题目
-点击左方菜单的 `Problems`，就能看到题目列表了。
+- Standard Input : Format of input data.
+- Standard Output : Format of output results.
+- Samples : Samples of input data and output data. NOTICE: the judge system may use more datasets for judgement but not limited to the samples.
+- Constraints : Constraint condition.
+- Note :  Some addtional information for the problem such as explaination of keywords etc.
+- Sources : The problem source , means where the problem comes from.
 
-点击题目标题可以查看题目内容，`Accepted/Submit` 列表示正确的和总的提交记录数量，`Ratio` 是这道题的通过率。
+Information such as Time Limit 、Memory Limit 和 Output Limit means the Time/Mem/Disk limitation while program running. 
 
-关于题目的描述 `Description`
+**NOTICE**: **Never follow the probem number for challenge**, because the problems list is not orderd by difficulty . The best way to start is high Ratio problems.
 
-- `Standard Input` 部分说明了题目的输入格式。
+If this is your first time here , try the [A+B Problem](/problem/a-b-problem/) to get familiar with the process.
 
-- `Standard Output` 部分说明了题目的输出格式。
+## How to submit your code
 
-- `Samples` 是题目输入和输出的样例。
+**NOTICE**: you can either write your code directly in the browser (Not Recommended), or you can write/check/run them in your local develop system .
 
-- `Constraints` 指题目的约束条件。
+While you get the final code , you should commit them to Lutece, click the Editor tab on the problem page, write or paste your code to the textbox , **Chose Code Language**, click Commit. you will see the judge status on the popup dialog , after a while , you will get one of these results list below:
 
-- `Note` 提供了题目的一些额外信息,比如出题人的提示或者对概念更加详细的解释等等。
+- Accepted : Congratulations!  your solution is correct ! 
+- Wrong Answer: Program can be compiled and run successfully, but got the wrong answer.
+- Compile Error: Compile errors found.
+- Runtime Error: Program can be compiled successfully ,but got errors while running.
+- Memory Limit Exceed: Program memory usage exceed the memory limitation.  
+- Time Limit Exceed: Program running with a long time exceed the time limitation.
+- Judge Error: Got error while checking your program , this mostly meaning the Lutece service failed.
 
-题目最下方还有题目来源等相关信息，以及 Time Limit 、Memory Limit 和 Output Limit。后面指的是題目在服务器上时间、内存和空间限定。
+You will also get details at the bottom while compiling errors found.
 
-`如果你是新手，千万不要按照题号做题`。因为题号不是按难度排序，优先选择 `Accepted` 人数较多的题方为上策。
+## How to join the contest
+Click 'Contest' at left menu, you will see the contests list , click one of them , you will get more information from the Summary tab ,such as time arrangement, team size etc. click the blue TEAM button will open REVIEW page to show the team details.
 
-如果是第一次来这里，不妨做做最为简单的 `A+B` 熟悉一下流程。
+**NOTICE**: 
 
-## 如何提交代码
-看完题目以后，经过一番思考，你想出了一个巧妙的解决问题的办法，你行云流水地在键盘上敲出了你的代码。当你仔细检查测试代码无误后，现在你要提交代码了！
+The basic unit to join contest is team , even only one person , you shoud also create a team(single person team).
 
-点击题目页面的 `editor` 进入代码编辑页面，在这里你可以修改你的代码。再次确认无误之后，`选择好你使用的语言` ，点击 `Submit` 就可以提交代码了！
+- Create team: Select MINE tab , click the blue CREATE button to create a new team.
+- Invite teammate: if the Team Size of contest settings is more than 1 , you can invite others while creating a team. just input the user's ID and select them one by one. those user's state will be Pending before the contest administrator approve the request.
+- Team information: you can write more information such as contact , shirt size etc in the Info area while creating team.
+- Join a team: you will see the joined team and invitation on the MINE tab , just click the green JOIN button will join the team, but if you already in a team , you should quit it before join a new one.
+- Start contest: you can get the problem list from the Problem tab after contest start, click the colored A/B/C/... circle button at the left column to change the problem, commit your code at the SUBMIT tab. RANK table shows the total contest information while SUBMITION tab shows all of the sumittions.
 
-在你提交完代码后，系统将弹出测评状态页面，这个页面显示了代码提交的测评状态，经过短暂的等待后，你将会看到自己的代码的测评结果。
+**NOTICE**: Any change of team information will make team into Pending state and waiting for approval.
 
-- `Accepted` : 恭喜，你的代码正确无误
-
-- `Wrong Answer`：程序能正确编译和运行，但结果错误。
-
-- `Compile Error`：程序编译错误。
-
-- `Runtime Error`：程序能正确编译但运行时产生错误。
-
-- `Memory Limit Exceed`：程序运行超出内存限制。
-
-- `Time Limit Exceed`：程序运行超出时间限制。
-
-- `Judge Error`：评判错误，这通常不是你的问题，而是系统的问题，可能评判系统挂掉了。
-
-我们最乐于见到的结果，当然是AC(Accepted)了！
-
-如果是编译错误，系统将会在页面底部的 `Info` 部分显示具体的编译错误提示。 
-
-## 如何参与比赛
-点击左侧菜单中的 `Contest` 进入比赛列表，点击要参与的比赛进入相关页面，在 `Summary` 这个标签下可以看到比赛的相关信息，诸如时间安排、注册人数、队伍大小限制等，点击 `TEAM` 蓝色的按钮即可转到比赛的 `Review` 页面，显示的是比赛队伍情况.
-
-**注意：比赛的基本参与单位是队伍(Team)，即便是单人参赛，也需要组队(单人队) 。**
-
-- 创建比赛队伍: 在 `Review` 页面选择 `MINE` 标签，若没有加入过任意队伍的话，即可点击蓝色的 `CREATE` 按钮创建比赛队伍.
-
-- 邀请参赛队员: 如果 `Team Size` 大于1人，则可以在创立队伍时邀请队员，在创建队伍的输入框中输入想要邀请的人的用户名即可一个一个加入，此时这些被邀请的人为 `Pending` 状态，还需要比赛组织者确认. 当所有成员确认后审核才会通过.
-
-- 完善队伍信息: 如果需要提供队伍其他的相关信息，诸如队员联系方式、队衫尺寸等，则可以在 Info 部分按照规定格式填写，比赛组织者可以提取相关信息进一步处理。
-
-- 如何加入队伍: 在 `MINE` 标签下可看到现在自己的队伍和所有的邀请队伍请求，要加入某个队伍只需要点击绿色的 `JOIN` 按钮即可，如果此时已经在某一队伍中，则会弹出一个对话框提示需要先退出原先队伍才能再加入。
-
-注意：**任何信息的修改都会使队伍重新进入 `Pending` 状态并等待审核。**
-
-- 如何开始比赛：到达比赛的开始时间后即可开始答题，在比赛页面的 `Problem` 标签中显示有所有参赛题目，用户可以点击左侧的 `A/B/C/D`等按钮切换题目，与单人做题不同，参赛者需要在 `SUBMIT` 标签提交代码，`SUBMISSION` 标签则显示的是已提交的情况，`RANK` 则显示是当前解题统计情况。
-
-## 如何提交作业
-没有单独的作业系统，作业是按照比赛来处理的，大部分单人作业只需要组建单人队伍参与比赛即可，注意队伍名称要按照老师要求填写。
+## How to submit your class work & homework
+There is no  specific class work & homework module, they are treated as Contest, so just join the class work/homework contest and submit your code before the deadline.

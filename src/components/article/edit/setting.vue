@@ -64,7 +64,7 @@
 					<async-mixrend-component
 						v-if = "withRender"
 						:content = "content"
-						class = "mt-4 markdown-body"
+						class = "mt-4"
 					/>
 					<v-textarea
 						v-else

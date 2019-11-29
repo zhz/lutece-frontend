@@ -50,7 +50,7 @@
 			<async-mixrend-component
 				v-if = "contest.settings.note"
 				:content = "contest.settings.note"
-				class = "mt-4 markdown-body"/>
+				class = "mt-4"/>
 			<div
 				v-if = "contest.problems"
 				class = "mt-4" >
