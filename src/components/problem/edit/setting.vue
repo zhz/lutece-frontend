@@ -74,6 +74,7 @@
 					<v-switch
 						:input-value = "problem.disabled"
 						:label = " problem.disabled ? 'Disabled' : 'Non Disabled' "
+						style = "display: none;"
 						@change = "$emit( 'input-disabled' , $event )"
 					/>
 				</div>

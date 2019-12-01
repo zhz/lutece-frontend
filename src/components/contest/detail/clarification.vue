@@ -1,10 +1,6 @@
 <template>
 	<v-container fiuld>
-		<error-spinner
-			v-if = "error"
-		/>
 		<comments
-			v-else
 			ref = "comments"
 			:fetch-comments = "fetchClarifications"
 			:submit = "submitClarification"
@@ -93,8 +89,7 @@ export default {
 				.then(data => ({
 					maxPage: data.maxPage,
 					list: data.contestClarificationList,
-				}))
-				.catch((error) => { this.error = error; });
+				}));
 		},
 
 		init() {
