@@ -3,7 +3,7 @@ import apolloProvider from '@/plugins/essential/apollo-provider';
 function getServerUri(protocol, path) {
 	const env = process.env.NODE_ENV;
 	const loc = window.location;
-	const host = env === 'production' ? loc.host : `${loc.host.split(':')[0]}:8000`;
+	const host = env === 'production' ? loc.host : `${loc.host.split(':')[0]}:80`;
 	let newUri = protocol;
 	if (loc.protocol === 'https:') {
 		newUri += 's:';
